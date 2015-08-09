@@ -1,0 +1,24 @@
+<head>
+  <title>momentsAppMeteor</title>
+</head>
+
+<body>
+    <header>
+        <h1>Moments</h1>
+        <form class="new-moment">
+            <input type="text" name="text" placeholder="Insert a moment here">
+        </form>
+    </header>
+
+    {{#each moments}}
+        {{> moment}}
+    {{/each}}
+
+
+</body>
+
+<template name="moment">
+  <div>
+      {{text}}
+  </div>
+</template>
