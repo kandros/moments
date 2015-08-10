@@ -21,6 +21,14 @@ if (Meteor.isClient) {
       event.target.text.value = "";
     }
   });
+
+  Template.moment.events({
+    "click .delete": function () {
+      if (confirm("Remove " + this.text + "?")) {
+        Moments.remove(this._id);
+      }
+    }
+  });
 }
 
 if (Meteor.isServer) {
