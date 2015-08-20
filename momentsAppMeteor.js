@@ -7,7 +7,7 @@ if (Meteor.isClient) {
       day: 'numeric',
       month: 'short',
       year: 'numeric'
-    }
+    };
     return new Date(date).toLocaleDateString('it-IT', options);
   });
 
@@ -35,6 +35,16 @@ if (Meteor.isClient) {
       Meteor.call("insertMoment", inputText);
 
       event.target.text.value = "";
+    },
+    "click .remove-all": function (e) {
+      e.preventDefault();
+      if (confirm("Svuotare il database?")) {
+        Meteor.call("removeAll");
+      }
+    },
+    "click .create-dummy": function (e) {
+      e.preventDefault();
+      Meteor.call("createDummy");
     }
   });
 
@@ -56,6 +66,17 @@ Meteor.methods({
   },
   removeMoment: function (momentId) {
     Moments.remove(momentId);
+  },
+  removeAll: function () {
+    Moments.remove({});
+  },
+  createDummy: function () {
+    for (var i = 0; i < 10; i++) {
+      Moments.insert({
+        text: "text " + i,
+        createdAt: new Date()
+      });
+    }
   }
 });
 

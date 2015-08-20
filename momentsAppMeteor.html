@@ -7,7 +7,9 @@
         <h1>Moments</h1>
         <p>There are currently {{ momentsCount }} beautiful moments worth remember.</p>
         <form class="new-moment">
-            <input type="text" name="text" placeholder="Insert a moment here">
+            <p>Nuovo Moment</p>
+            <input required ="text" name="text" placeholder="Insert a moment here">
+            <Button class="remove-all">Rimuovi tutto</Button> <button class="create-dummy">Crea tests</button>
         </form>
     </header>
 
@@ -20,7 +22,8 @@
 
 <template name="moment">
   <div class="moment">
-      {{text}} - {{ formatDate createdAt}} {{myId}}
       <button class="remove">&times;</button>
+      <p class="creation-date">{{ formatDate createdAt}}</p>
+      <p class="text"> {{ text }}</p>
   </div>
 </template>

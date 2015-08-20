@@ -1,7 +1,40 @@
 /* CSS declarations go here */
+
+form.new-moment {
+  border: 1px solid;
+  padding: 10px;
+  background-color: #eee;
+}
+
+
+
 .moment {
   padding: 8px;
-  margin: 5px;
-  border: 2px solid ;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid ;
   float: left;
+  position: relative;
+  min-width: 100px;
+  min-height: 70px;
+}
+
+.text {
+  clear: both;
+  padding-top: 5px;
+}
+
+
+button.remove {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+
+.creation-date {
+  margin-top: 0;
+  font-size: 80%;
 }
