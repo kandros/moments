@@ -5,6 +5,7 @@
 <body>
     <header>
         <h1>Moments</h1>
+        <p>There are currently {{ momentsCount }} beautiful moments worth remember.</p>
         <form class="new-moment">
             <input type="text" name="text" placeholder="Insert a moment here">
         </form>
@@ -18,8 +19,8 @@
 </body>
 
 <template name="moment">
-  <div>
-      {{text}}
-      <button class="delete">&times;</button>
+  <div class="moment">
+      {{text}} - {{ formatDate createdAt}} {{myId}}
+      <button class="remove">&times;</button>
   </div>
 </template>
