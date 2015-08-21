@@ -13,7 +13,7 @@ if (Meteor.isClient) {
 
   Template.body.helpers({
     moments: function () {
-      return Moments.find({});
+      return Moments.find({}, {sort: {createdAt: -1}});
     },
     momentsCount: function () {
       return Moments.find({}).count();
