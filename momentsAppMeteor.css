@@ -1,12 +1,39 @@
 /* CSS declarations go here */
 
+
+/* MDL OVERRIDE */
+
+.moment .mdl-card__supporting-text {
+  padding: 8px;
+}
+.moment .mdl-card__actions {
+  padding: 2px;
+}
+
+
+
+
+
+body {
+  font-family: 'Roboto, Helvetica, Arial, sans-serif';
+}
+
+p {
+  font-size: 16px;
+}
+
+.main-container {
+  padding: 15px;
+}
+
+
 form.new-moment {
   border: 1px solid;
   padding: 10px;
   background-color: #eee;
 }
 
-.debug-bar {
+.dev-bar {
   margin: 10px 0;
 }
 
@@ -16,11 +43,12 @@ form.new-moment {
   padding: 8px;
   margin-bottom: 10px;
   margin-right: 10px;
-  border: 1px solid ;
+  /*border: 1px solid ;*/
   float: left;
   position: relative;
   min-width: 100px;
   min-height: 70px;
+  max-width: 150px;
 }
 
 .text {
