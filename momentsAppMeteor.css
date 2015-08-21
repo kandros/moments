@@ -16,6 +16,7 @@
 
 body {
   font-family: 'Roboto, Helvetica, Arial, sans-serif';
+  background-image: url("images/transparent.jpg");
 }
 
 p {
@@ -35,6 +36,8 @@ form.new-moment {
 
 .dev-bar {
   margin: 10px 0;
+  padding: 15px 10px;
+  background-color: #4A148C;
 }
 
 
