@@ -10,7 +10,7 @@
             <form class="new-moment">
                 <p>Nuovo Moment</p>
                 <input required ="text" name="text" placeholder="Insert a moment here">
-                <button>Inserisci</button>
+                <button class="btn btn-default">Inserisci</button>
             </form>
 
         </header>
@@ -27,10 +27,36 @@
 
 
         <div class="fixed-add-button">
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            <button data-toggle="modal" data-target="#myModal" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                 <i class="material-icons">add</i>
             </button>
         </div>
+
+
+
+        <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+          <form class="new-moment">
+              <p>Nuovo Moment</p>
+              <input required ="text" name="text" placeholder="Insert a moment here">
+              <button class="btn btn-default">Inserisci</button>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </body>
 
