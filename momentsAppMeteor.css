@@ -11,10 +11,9 @@
 }
 
 
-.demo-layout-transparent {
+/*.demo-layout-transparent {
   background: url("images/transparent.jpg") center / cover;
-  /*height: 400px;*/
-}
+}*/
 
 
 body {
@@ -28,7 +27,7 @@ p {
 
 
 header {
-  padding: 15px;
+  padding: 0 15px 15px;
 }
 
 
@@ -83,4 +82,12 @@ button.remove {
 .creation-date {
   margin-top: 0;
   font-size: 80%;
+}
+
+
+
+.fixed-add-button {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
 }
