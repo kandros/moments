@@ -6,11 +6,15 @@ form.new-moment {
   background-color: #eee;
 }
 
+.debug-bar {
+  margin: 10px 0;
+}
+
 
 
 .moment {
   padding: 8px;
-  margin-top: 10px;
+  margin-bottom: 10px;
   margin-right: 10px;
   border: 1px solid ;
   float: left;

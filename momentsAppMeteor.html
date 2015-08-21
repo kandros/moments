@@ -5,12 +5,15 @@
 <body>
     <header>
         <h1>Moments</h1>
-        <p>There are currently {{ momentsCount }} beautiful moments worth remember.</p>
+        <p>There are currently <strong>{{ momentsCount }}</strong> beautiful moments worth remember.</p>
         <form class="new-moment">
             <p>Nuovo Moment</p>
             <input required ="text" name="text" placeholder="Insert a moment here">
-            <Button class="remove-all">Rimuovi tutto</Button> <button class="create-dummy">Crea tests</button>
+            <button>Inserisci</button>
         </form>
+        <div class="debug-bar">
+            <Button class="remove-all">Rimuovi tutto</Button> <button class="create-dummy">Crea tests</button>
+        </div>
     </header>
 
     {{#each moments}}

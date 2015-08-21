@@ -36,14 +36,12 @@ if (Meteor.isClient) {
 
       event.target.text.value = "";
     },
-    "click .remove-all": function (e) {
-      e.preventDefault();
+    "click .remove-all": function () {
       if (confirm("Svuotare il database?")) {
         Meteor.call("removeAll");
       }
     },
-    "click .create-dummy": function (e) {
-      e.preventDefault();
+    "click .create-dummy": function () {
       Meteor.call("createDummy");
     }
   });
