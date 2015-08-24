@@ -1,6 +1,23 @@
 Moments = new Mongo.Collection("moments");
 
+function setSessionLonLat() {
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      alert("current position: " + lat + " " + long);
+      Session.set('position', {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+      });
+    },
+    function (error) {
+      alert(error.message);
+    }
+  );
+}
+
+
 if (Meteor.isClient) {
+
 
   Template.registerHelper('formatDate', function (date) {
     var options = {
@@ -13,7 +30,11 @@ if (Meteor.isClient) {
 
   Template.body.helpers({
     moments: function () {
-      return Moments.find({}, {sort: {createdAt: -1}});
+      return Moments.find({}, {
+        sort: {
+          createdAt: -1
+        }
+      });
     },
     momentsCount: function () {
       return Moments.find({}).count();
