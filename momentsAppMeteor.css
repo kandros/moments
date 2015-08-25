@@ -83,12 +83,3 @@ button.remove {
   margin-top: 0;
   font-size: 85%;
 }
-
-
-
-.fixed-add-button {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  z-index: 500;
-}
