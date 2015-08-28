@@ -3,11 +3,10 @@ Moments = new Mongo.Collection("moments");
 function setSessionLonLat() {
   navigator.geolocation.getCurrentPosition(
     function (position) {
-      alert("current position: " + lat + " " + long);
-      Session.set('position', {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude
-      });
+      Session.set('position', 
+        position.coords.latitude + ',' + position.coords.longitude
+      );
+      console.log("test");
     },
     function (error) {
       alert(error.message);
@@ -18,6 +17,7 @@ function setSessionLonLat() {
 
 if (Meteor.isClient) {
 
+  setSessionLonLat();
 
   Template.registerHelper('formatDate', function (date) {
     var options = {

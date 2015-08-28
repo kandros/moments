@@ -1,0 +1,9 @@
+.moment .remove {
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+}
+
+.moment .remove i {
+  font-size: 20px;
+}
