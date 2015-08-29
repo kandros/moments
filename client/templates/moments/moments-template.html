@@ -6,10 +6,6 @@
         <button class="btn btn-default">Inserisci</button>
     </form>
 
-    <div class="dev-bar">
-        <button class="remove-all mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Rimuovi tutto</button>
-        <button class="create-dummy mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Crea tests</button>
-    </div>
 
 </template>
 
@@ -21,13 +17,22 @@
         <p class="creation-date">{{ formatDate createdAt}}</p>
         <div class="mdl-card__supporting-text">
             <p class="text"> {{ text }}</p>
-            <p class="text"> {{ position }}</p>
+            <p class="text"> {{ address }}</p>
         </div>
         <div class="mdl-card__actions mdl-card--border">
             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           More Info
         </a>
         </div>
+    </div>
+
+</template>
+
+<template name="devBar">
+
+    <div class="dev-bar">
+        <button class="remove-all mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Rimuovi tutto</button>
+        <button class="create-dummy mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Crea tests</button>
     </div>
 
 </template>

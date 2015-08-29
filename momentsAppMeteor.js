@@ -1,12 +1,14 @@
 Moments = new Mongo.Collection("moments");
 
-function setSessionLonLat() {
+function setSessionLatLon() {
   navigator.geolocation.getCurrentPosition(
     function (position) {
-      Session.set('position', 
-                  position.coords.latitude + ',' + position.coords.longitude
+      Session.set('position',
+                  {
+                    lat: position.coords.latitude,
+                    lon: position.coords.longitude
+                  }
                  );
-                 console.log("test");
     },
     function (error) {
       // alert(error.message);
@@ -14,6 +16,20 @@ function setSessionLonLat() {
   );
 }
 
+
+function getAddress(latLon, callback) {
+  var lat = latLon.lat;
+  var lng = latLon.lon;
+  var latlng = new google.maps.LatLng(lat, lng);
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      if (results[1]) {
+        alert(results[1].formatted_address);
+      }
+    }
+  });
+}
 
 if (Meteor.isClient) {
 
@@ -54,16 +70,17 @@ if (Meteor.isClient) {
   Template.body.events({
     "submit .new-moment": function (event) {
       event.preventDefault();
-      var position;
-      var address;
-      setSessionLonLat().done(function(){
-        position = Session.get('position') || "test";
-        getAddress(position).done(function () {
-          Meteor.call("insertMoment", inputText, position, address);
-        });
-      });
+      setSessionLatLon();
+      var  position = Session.get('position') || "noLocation";
+      var address = getAddress(position);
+
+      alert(position);
 
       var inputText = event.target.text.value;
+
+
+      // Meteor.call("insertMoment", inputText, position, address);
+
 
 
 
@@ -118,4 +135,3 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
-
