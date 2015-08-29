@@ -4,12 +4,12 @@ function setSessionLonLat() {
   navigator.geolocation.getCurrentPosition(
     function (position) {
       Session.set('position', 
-        position.coords.latitude + ',' + position.coords.longitude
-      );
-      console.log("test");
+                  position.coords.latitude + ',' + position.coords.longitude
+                 );
+                 console.log("test");
     },
     function (error) {
-      alert(error.message);
+      // alert(error.message);
     }
   );
 }
@@ -17,7 +17,6 @@ function setSessionLonLat() {
 
 if (Meteor.isClient) {
 
-  setSessionLonLat();
 
   Template.registerHelper('formatDate', function (date) {
     var options = {
@@ -51,9 +50,12 @@ if (Meteor.isClient) {
     "submit .new-moment": function (event) {
       event.preventDefault();
 
-      var inputText = event.target.text.value;
+      setSessionLonLat();
 
-      Meteor.call("insertMoment", inputText);
+      var inputText = event.target.text.value;
+      var position = Session.get('position') || "test";
+
+      Meteor.call("insertMoment", inputText, position);
 
       event.target.text.value = "";
     },
@@ -77,9 +79,10 @@ if (Meteor.isClient) {
 }
 
 Meteor.methods({
-  insertMoment: function (text) {
+  insertMoment: function (text, position) {
     Moments.insert({
       text: text,
+      position: position,
       createdAt: new Date()
     });
   },
