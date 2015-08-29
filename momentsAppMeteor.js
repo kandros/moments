@@ -54,13 +54,18 @@ if (Meteor.isClient) {
   Template.body.events({
     "submit .new-moment": function (event) {
       event.preventDefault();
-
-      setSessionLonLat();
+      var position;
+      var address;
+      setSessionLonLat().done(function(){
+        position = Session.get('position') || "test";
+        getAddress(position).done(function () {
+          Meteor.call("insertMoment", inputText, position, address);
+        });
+      });
 
       var inputText = event.target.text.value;
-      var position = Session.get('position') || "test";
 
-      Meteor.call("insertMoment", inputText, position);
+
 
       event.target.text.value = "";
     },
