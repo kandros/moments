@@ -17,6 +17,11 @@ function setSessionLonLat() {
 
 if (Meteor.isClient) {
 
+  $(function () {
+    $('.modal').on('shown.bs.modal', function() {
+      $(this).find('[autofocus]').focus();
+    });
+  });
 
   Template.registerHelper('formatDate', function (date) {
     var options = {
@@ -96,6 +101,7 @@ Meteor.methods({
     for (var i = 0; i < 10; i++) {
       Moments.insert({
         text: "text " + i,
+        position: "45.676494299999995,9.4886792",
         createdAt: new Date()
       });
     }
@@ -107,3 +113,4 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
