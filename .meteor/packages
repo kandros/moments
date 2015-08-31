@@ -11,3 +11,4 @@ poetic:material-design-lite
 twbs:bootstrap
 jquery
 fourseven:scss
+coffeescript
