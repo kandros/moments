@@ -9,6 +9,5 @@ autopublish
 insecure
 poetic:material-design-lite
 twbs:bootstrap
-iron:router
 jquery
 fourseven:scss
