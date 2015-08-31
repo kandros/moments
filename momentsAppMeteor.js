@@ -33,6 +33,8 @@ function getAddress(latLon, callback) {
 
 if (Meteor.isClient) {
 
+  Meteor.subscribe("moments");
+
   $(function () {
     $('.modal').on('shown.bs.modal', function () {
       $(this).find('[autofocus]').focus();
@@ -143,6 +145,9 @@ Meteor.methods({
 });
 
 if (Meteor.isServer) {
+  Meteor.publish( "moments", function () {
+    return Moments.find({});
+  });
   Meteor.startup(function () {
     // code to run on server at startup
   });
