@@ -1,5 +1,5 @@
 $(function () {
-  var $fabButtons = $('.start-hidden');
+  var $fabButtons = $('.fab--start-hidden');
   $('.fixed-fab-container').on('mouseenter', function () {
     var height = 56;
     var spacing = 5;
