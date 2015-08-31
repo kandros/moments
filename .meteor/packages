@@ -12,3 +12,6 @@ twbs:bootstrap
 jquery
 fourseven:scss
 coffeescript
+velocity:console-reporter
+sanjo:jasmine
+velocity:html-reporter
