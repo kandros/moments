@@ -3,12 +3,10 @@ Moments = new Mongo.Collection("moments");
 function setSessionLatLon() {
   navigator.geolocation.getCurrentPosition(
     function (position) {
-      Session.set('position',
-                  {
-                    lat: position.coords.latitude,
-                    lon: position.coords.longitude
-                  }
-                 );
+      Session.set('position', {
+        lat: position.coords.latitude,
+        lon: position.coords.longitude
+      });
     },
     function (error) {
       // alert(error.message);
@@ -22,7 +20,9 @@ function getAddress(latLon, callback) {
   var lng = latLon.lon;
   var latlng = new google.maps.LatLng(lat, lng);
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+  geocoder.geocode({
+    'latLng': latlng
+  }, function (results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       if (results[1]) {
         alert(results[1].formatted_address);
@@ -34,7 +34,7 @@ function getAddress(latLon, callback) {
 if (Meteor.isClient) {
 
   $(function () {
-    $('.modal').on('shown.bs.modal', function() {
+    $('.modal').on('shown.bs.modal', function () {
       $(this).find('[autofocus]').focus();
     });
   });
@@ -59,6 +59,7 @@ if (Meteor.isClient) {
     momentsCount: function () {
       return Moments.find({}).count();
     }
+
   });
 
   // Template.moment.helpers({
@@ -67,11 +68,22 @@ if (Meteor.isClient) {
   //   }
   // });
 
+  // Template.floatingActionButtons.helpers({
+  //   momentsNotEmpty: function () {
+  //     var momentsCount = Moments.find({}).count();
+  //     if (momentsCount > 0) {
+  //       alert();
+  //       return true;
+  //     }
+  //   }
+  // });
+
+
   Template.body.events({
     "submit .new-moment": function (event) {
       event.preventDefault();
       setSessionLatLon();
-      var  position = Session.get('position') || "noLocation";
+      var position = Session.get('position') || "noLocation";
       var address = getAddress(position);
 
       alert(position);
