@@ -32,7 +32,6 @@ function getAddress(latLon, callback) {
 }
 
 if (Meteor.isClient) {
-
   Meteor.subscribe("moments");
 
   $(function () {
@@ -50,6 +49,11 @@ if (Meteor.isClient) {
     return new Date(date).toLocaleDateString('it-IT', options);
   });
 
+  Template.registerHelper('momentsCount', function () {
+    console.log("moments count:" + Moments.find({}).count());
+    return Moments.find({}).count();
+  });
+
   Template.body.helpers({
     moments: function () {
       return Moments.find({}, {
@@ -57,11 +61,7 @@ if (Meteor.isClient) {
           createdAt: -1
         }
       });
-    },
-    momentsCount: function () {
-      return Moments.find({}).count();
     }
-
   });
 
   // Template.moment.helpers({
@@ -70,15 +70,18 @@ if (Meteor.isClient) {
   //   }
   // });
 
-  // Template.floatingActionButtons.helpers({
-  //   momentsNotEmpty: function () {
-  //     var momentsCount = Moments.find({}).count();
-  //     if (momentsCount > 0) {
-  //       alert();
-  //       return true;
-  //     }
-  //   }
+  // Template.floatingActionButtons.onCreated(function () {
+  //   this.subscribe("Moments");
   // });
+
+  Template.floatingActionButtons.helpers({
+    momentsNotEmpty: function () {
+      var momentsCount = Moments.find({}).count();
+      if (momentsCount > 0) {
+        return true;
+      }
+    }
+  });
 
 
   Template.body.events({
