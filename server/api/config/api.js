@@ -22,6 +22,11 @@ API  = {
           return request.body;
       }
     }
+  },
+  response: function ( context, statusCode, data ) {
+    context.response.setHeader( 'Content-Type', 'application/json' );
+    context.response.statusCode = statusCode;
+    context.resource.end( JSON.stringify(data) );
   }
 
 };
