@@ -1,35 +1,35 @@
 Moments = new Mongo.Collection("moments");
 
-function setSessionLatLon() {
-  navigator.geolocation.getCurrentPosition(
-    function (position) {
-      Session.set('position', {
-        lat: position.coords.latitude,
-        lon: position.coords.longitude
-      });
-    },
-    function (error) {
-      // alert(error.message);
-    }
-  );
-}
-
-
-function getAddress(latLon, callback) {
-  var lat = latLon.lat;
-  var lng = latLon.lon;
-  var latlng = new google.maps.LatLng(lat, lng);
-  var geocoder = new google.maps.Geocoder();
-  geocoder.geocode({
-    'latLng': latlng
-  }, function (results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      if (results[1]) {
-        alert(results[1].formatted_address);
-      }
-    }
-  });
-}
+// function setSessionLatLon() {
+//   navigator.geolocation.getCurrentPosition(
+//     function (position) {
+//       Session.set('position', {
+//         lat: position.coords.latitude,
+//         lon: position.coords.longitude
+//       });
+//     },
+//     function (error) {
+//       // alert(error.message);
+//     }
+//   );
+// }
+//
+//
+// function getAddress(latLon, callback) {
+//   var lat = latLon.lat;
+//   var lng = latLon.lon;
+//   var latlng = new google.maps.LatLng(lat, lng);
+//   var geocoder = new google.maps.Geocoder();
+//   geocoder.geocode({
+//     'latLng': latlng
+//   }, function (results, status) {
+//     if (status == google.maps.GeocoderStatus.OK) {
+//       if (results[1]) {
+//         alert(results[1].formatted_address);
+//       }
+//     }
+//   });
+// }
 
 if (Meteor.isClient) {
   Meteor.subscribe("moments");
@@ -87,19 +87,15 @@ if (Meteor.isClient) {
   Template.body.events({
     "submit .new-moment": function (event) {
       event.preventDefault();
-      setSessionLatLon();
-      var position = Session.get('position') || "noLocation";
-      var address = getAddress(position);
-
-      alert(position);
+      // setSessionLatLon();
+      // var position = Session.get('position') || "noLocation";
+      // var address = getAddress(position);
+      //
 
       var inputText = event.target.text.value;
 
 
-      // Meteor.call("insertMoment", inputText, position, address);
-
-
-
+      Meteor.call("insertMoment", inputText, position);
 
       event.target.text.value = "";
     },
