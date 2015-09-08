@@ -1,4 +1,5 @@
 Router.route( '/api/v1/moments', function () {
+
   this.response.setHeader( 'Access-Control-Allow-Origin', '*' );
 
   if (this.request.method === "OPTIONS") {
