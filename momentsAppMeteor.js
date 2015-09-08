@@ -62,29 +62,13 @@ if (Meteor.isClient) {
       });
   });
 
-  Template.body.helpers({
-
-  });
-
   // Template.moment.helpers({
   //   myId: function () {
   //     return this._id;
   //   }
   // });
 
-  // Template.floatingActionButtons.onCreated(function () {
-  //   this.subscribe("Moments");
-  // });
-  
 
-  Template.floatingActionButtons.helpers({
-    momentsNotEmpty: function () {
-      var momentsCount = Moments.find({}).count();
-      if (momentsCount > 0) {
-        return true;
-      }
-    }
-  });
 
 
   Template.momentsTemplate.events({
