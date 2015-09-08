@@ -71,30 +71,7 @@ if (Meteor.isClient) {
 
 
 
-  Template.momentsTemplate.events({
-    "submit .new-moment": function (event) {
-      event.preventDefault();
-      // setSessionLatLon();
-      // var position = Session.get('position') || "noLocation";
-      // var address = getAddress(position);
-      //
 
-      var inputText = event.target.text.value;
-
-
-      Meteor.call("insertMoment", inputText);
-
-      event.target.text.value = "";
-    },
-    "click .remove-all": function () {
-      if (confirm("Svuotare il database?")) {
-        Meteor.call("removeAll");
-      }
-    },
-    "click .create-dummy": function () {
-      Meteor.call("createDummy");
-    }
-  });
 
 
 }
