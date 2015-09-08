@@ -53,7 +53,7 @@ if (Meteor.isClient) {
     console.log("moments count:" + Moments.find({}).count());
     return Moments.find({}).count();
   });
-  
+
   Template.registerHelper('moments', function () {
       return Moments.find({}, {
         sort: {
@@ -75,6 +75,7 @@ if (Meteor.isClient) {
   // Template.floatingActionButtons.onCreated(function () {
   //   this.subscribe("Moments");
   // });
+  
 
   Template.floatingActionButtons.helpers({
     momentsNotEmpty: function () {
@@ -86,7 +87,7 @@ if (Meteor.isClient) {
   });
 
 
-  Template.body.events({
+  Template.momentsTemplate.events({
     "submit .new-moment": function (event) {
       event.preventDefault();
       // setSessionLatLon();
@@ -111,13 +112,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.moment.events({
-    "click .remove": function () {
-      if (confirm("Cancellare " + this.text + "?")) {
-        Meteor.call("removeMoment", this._id);
-      }
-    }
-  });
+
 }
 
 Meteor.methods({
