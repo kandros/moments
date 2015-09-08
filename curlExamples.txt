@@ -1,0 +1,3 @@
+curl -X [method] [url] -d "key=value"
+curl -X GET http://localhost:3000/api/moments
+curl -X POST http://localhost:3000/api/moments -d "text=test"
