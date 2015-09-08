@@ -14,6 +14,9 @@ coffeescript
 velocity:console-reporter
 sanjo:jasmine
 velocity:html-reporter
-iron:router
 accounts-facebook
 accounts-ui
+check
+iron:router
+random
+http
