@@ -53,15 +53,17 @@ if (Meteor.isClient) {
     console.log("moments count:" + Moments.find({}).count());
     return Moments.find({}).count();
   });
-
-  Template.body.helpers({
-    moments: function () {
+  
+  Template.registerHelper('moments', function () {
       return Moments.find({}, {
         sort: {
           createdAt: -1
         }
       });
-    }
+  });
+
+  Template.body.helpers({
+
   });
 
   // Template.moment.helpers({
