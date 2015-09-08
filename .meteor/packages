@@ -20,3 +20,4 @@ check
 iron:router
 random
 http
+nimble:restivus
