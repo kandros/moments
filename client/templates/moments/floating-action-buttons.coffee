@@ -1,4 +1,5 @@
-$ ->
+Template.floatingActionButtons.rendered = () ->
+
   $fabButtons = $('.fab--start-hidden')
   $fixedFabContainer = $('.fixed-fab-container')
   $fixedFabContainer.on 'mouseenter', ->
