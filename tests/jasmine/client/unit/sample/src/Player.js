@@ -1,8 +1,7 @@
-/* globals customVar: true */
-
-customVar = "string for test";
+/* globals Player: true */
 
 Player = function Player() {};
+customTest = "test";
 
 Player.prototype.play = function(song) {
   this.currentlyPlayingSong = song;

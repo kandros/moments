@@ -1,9 +1,17 @@
 /* globals Player: false, Song: false */
 
-describe('customVar', function () {
-  expect(customVar).toBeTruthy();
-});
+describe( 'customTest', function () {
 
+  it('should be truthy', function () {
+    expect(customTest).toBeTruthy();
+  });
+  it('should not be 1', function () {
+    expect(customTest).not.toBe(1);
+  });
+  it('should be "test"', function () {
+    expect(customTest).toBe("test");
+  });
+});
 
 describe('Player', function() {
   var player;
