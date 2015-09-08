@@ -95,7 +95,7 @@ if (Meteor.isClient) {
       var inputText = event.target.text.value;
 
 
-      Meteor.call("insertMoment", inputText, position);
+      Meteor.call("insertMoment", inputText);
 
       event.target.text.value = "";
     },
