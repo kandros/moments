@@ -1,0 +1,17 @@
+<template name="moment">
+
+    <div class="moment mdl-card mdl-shadow--2dp">
+        <button class="remove"><i class="material-icons">delete</i></button>
+        <p class="creation-date">{{ formatDate createdAt}}</p>
+        <div class="mdl-card__supporting-text">
+            <p class="text"> {{ text }}</p>
+            <p class="text"> {{ address }}</p>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          More Info
+        </a>
+        </div>
+    </div>
+
+</template>

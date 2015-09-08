@@ -3,5 +3,5 @@ Router.configure({
 });
 
 Router.route('/', {
-  template: 'homeTemplate'
+  template: 'momentsTemplate'
 });
