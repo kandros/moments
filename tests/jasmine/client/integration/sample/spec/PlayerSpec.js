@@ -1,10 +1,5 @@
 /* globals Player: false, Song: false */
 
-describe('customVar', function () {
-  expect(customVar).toBeTruthy();
-});
-
-
 describe('Player', function() {
   var player;
   var song;

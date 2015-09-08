@@ -1,4 +1,4 @@
-describe('Moments', function () {
+describe('Test', function () {
 
   it('should be falsy', function () {
     var x = false;

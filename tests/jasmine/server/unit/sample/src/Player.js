@@ -1,6 +1,4 @@
-/* globals customVar: true */
-
-customVar = "string for test";
+/* globals Player: true */
 
 Player = function Player() {};
 
