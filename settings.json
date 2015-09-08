@@ -1,0 +1,6 @@
+/* use var xxx = Meteor.settings.magic; */
+
+{
+  "key":"value",
+  "anotherKey":"anotherValue"
+}
