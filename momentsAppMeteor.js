@@ -98,3 +98,6 @@ Meteor.methods({
     }
   }
 });
+
+var secretPizzaAccessCode = Meteor.settings.magicPizzaService;
+console.log(secretPizzaAccessCode);

@@ -1,6 +1,3 @@
-/* use var xxx = Meteor.settings.magic; */
-
 {
-  "key":"value",
-  "anotherKey":"anotherValue"
+  "magicPizzaService": "Our1234API5678Key"
 }

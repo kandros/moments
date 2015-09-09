@@ -12,3 +12,5 @@ Template.momentsTemplate.events
       return Meteor.call "removeAll"
   "click .create-dummy": () ->
     return Meteor.call "createDummy"
+  "click .minion-image": () ->
+    return alert()
