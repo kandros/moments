@@ -16,4 +16,4 @@ Template.momentsTemplate.events
     audio = new Audio("/audio/ba-dum-tsss.wav")
     audio.currentTime = 0
     audio.play()
-    console.log "test!"
+    console.log "Banana!"
