@@ -7,10 +7,13 @@ Template.momentsTemplate.events
 
     return event.target.text.value = ""
 
-  "click .remove-all": () ->
+  "click .remove-all": ->
     if confirm "Svuotare il database?"
       return Meteor.call "removeAll"
-  "click .create-dummy": () ->
+  "click .create-dummy": ->
     return Meteor.call "createDummy"
-  "click .minion-image": () ->
-    return alert()
+  "click .minion-image": ->
+    audio = new Audio("/audio/ba-dum-tsss.wav")
+    audio.currentTime = 0
+    audio.play()
+    console.log "test!"
