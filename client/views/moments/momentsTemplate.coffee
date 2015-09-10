@@ -1,6 +1,6 @@
 Template.momentsTemplate.events
   "submit .new-moment": (event) ->
-    event.preventDefault
+    event.preventDefault()
     inputText = event.target.text.value
 
     Meteor.call "insertMoment", inputText
