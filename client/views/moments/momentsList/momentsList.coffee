@@ -1,4 +1,4 @@
-Template.momentsTemplate.events
+Template.momentsList.events
   "submit .new-moment": (event) ->
     event.preventDefault()
     inputText = event.target.text.value
