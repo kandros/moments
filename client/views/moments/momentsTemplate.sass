@@ -14,7 +14,24 @@ span.app
   overflow: auto
   background-color: #fafafa
   padding: 30px
-  min-height: 250px
+  position: relative
+  min-height: 400px
+
+  .sliding-moment-container
+    top: 0
+    bottom: 0
+    left: 0
+    width: 40%
+    transform: translateX(0)
+    position: absolute
+    z-index: 10
+    background-color: white
+    transition: all .7s ease-out
+    margin: 20px 0
+    box-shadow: 0 0 2px 0 black
+    &.not-visible
+      transform: translateX(-100%)
+
 
 .dev-bar
   padding: 15px 30px
