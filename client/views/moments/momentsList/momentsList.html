@@ -17,7 +17,9 @@
         <img class="minion-image" src="/images/minion.png" alt="">
     </div>
     <div class="moments-container">
-        <div class="sliding-moment-container not-visible"></div>
+        <div class="sliding-moment-container ">
+            {{> momentDetail}}
+        </div>
         {{#each moments}} {{> moment}} {{/each}}
     </div>
 

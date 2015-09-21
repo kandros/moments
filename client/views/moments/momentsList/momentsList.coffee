@@ -17,5 +17,3 @@ Template.momentsList.events
     audio.currentTime = 0
     audio.play()
     console.log "Banana!"
-  "click .moments-container": ->
-    $(".sliding-moment-container").toggleClass "not-visible"

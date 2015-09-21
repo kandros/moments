@@ -19,3 +19,6 @@ Template.registerHelper('moments', function () {
       }
     });
 });
+Template.registerHelper('currentMoment', function () {
+    return Session.get("currentMoment");
+});
